@@ -12,14 +12,14 @@ interface IModalProps {
 interface FormData {
   name: string;
   email: string;
-  number: string;
+  phone: string;
 }
 
 export default function Modal({display, modal}: IModalProps) {
     const [formData, setFormData] = useState<FormData>({
       name: '',
       email: '',
-      number: '',
+      phone: '',
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
@@ -59,7 +59,7 @@ export default function Modal({display, modal}: IModalProps) {
               required
               placeholder="Ваш телефон" 
               type="number"
-              value={formData.number}
+              value={formData.phone}
               onChange={handleChange}/>
               <input 
               name="email" 
