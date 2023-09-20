@@ -5,7 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     
     // Ваш токен бота и ID чата (замените на свои значения)
-    $botToken = "5915134647:AAET-G-uuLKqj7FJhGbttiMQ41ldYXPVCXQ";
+    require __DIR__ . '/vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+    
+    $botToken = $_ENV['TELEGRAM_BOT_TOKEN'];
+    
     $chatId = "@CriticL";
     
     // Текст сообщения
