@@ -1,0 +1,25 @@
+.nav {
+    &__list {
+        padding-right: 55px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 40px;
+        right: 60px;
+
+        &-item {
+            list-style-type: none;
+            color: #000;
+            font-family: AngelicaC;
+            margin-right: 55px;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,95 +1,37 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from '../../node_modules/next/image';
+import Link from '../../node_modules/next/link';
+import {Metadata} from 'next';
+
+import './page.scss';
+import inst from '../../public/instagram.svg';
+import telegram from '../../public/telegram.svg';
+import whatsapp from '../../public/whatsapp.svg';
+import logo from '../../public/logo-white.svg';
+
+export const metadata: Metadata = {
+	title: 'Главная'
+}
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+	return (
+		<section className='mainPage'>
+			<Image className='logo' src={logo} width={150} height={150} alt="logo"/>
+			<div className='container'>
+				<nav className='mainPage__nav'>
+					<ul className='mainPage__list'>
+						<li className="mainPage__list-item"><Link href='/'>Главная</Link></li>
+						<li className="mainPage__list-item"><Link href='/about-me'>Обо мне</Link></li>
+						<li className="mainPage__list-item"><Link href='/portfolio'>Портфолио</Link></li>
+						<li className="mainPage__list-item"><Link href='/my-services'>Услуги</Link></li>
+						<li className="mainPage__list-item"><Link href='/'>Отзывы</Link></li>	
+					</ul>
+				</nav>
+			</div>
+			<div className="mainPage__madia">
+				<div className="mainPage__madia-inst"><Link href='/'><Image src={inst} width={40} height={40} alt="instagram"/></Link></div>
+				<div className="mainPage__madia-telegram"><Link href='/'><Image src={telegram} width={40} height={40} alt="telegram"/></Link></div>
+				<div className="mainPage__madia-whatsapp"><Link href='/'><Image src={whatsapp} width={40} height={40} alt="whatsapp"/></Link></div>
+			</div>
+		</section>
+	)
 }
