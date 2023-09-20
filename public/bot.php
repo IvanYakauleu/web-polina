@@ -1,4 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: https://web-polina.vercel.app/");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
