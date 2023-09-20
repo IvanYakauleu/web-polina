@@ -8,10 +8,10 @@ import logo from '../../../public/logo-black.svg'
 export default function Portfolio() {
     return(
         <>
-            <div className="portfolio__nav-wrapper">
+            <header className="portfolio__nav-wrapper">
                 <Image className='logo' src={logo} width={150} height={150} alt="logo"/>
                 <Nav color={'black'}/>
-            </div>
+            </header>
         </>
     )
 }

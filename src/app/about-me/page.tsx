@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 export default function AboutMe () {
     return (
         <div className='about-me'>
-            <div className="about-me__nav-wrapper">
+            <header className="about-me__nav-wrapper">
                 <Image className='logo' src={logo} width={150} height={150} alt="logo"/>
                 <Nav color={'white'}/>
-            </div>
+            </header>
 
             <div className="about-me__main-wrapper">
                 <div className="about-me__main">

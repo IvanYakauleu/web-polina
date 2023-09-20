@@ -1,6 +1,9 @@
+'use client';
+
 interface ICardProps {
     title: string;
     items: string[];
+    modal: () => void;
 }
 
 
@@ -26,7 +29,7 @@ export default function Card(props: ICardProps) {
             <ul>
                 {items}
             </ul>
-            <button>Записаться</button>
+            <button onClick={props.modal}>Записаться</button>
         </div>
     )
 }
