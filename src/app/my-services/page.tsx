@@ -10,6 +10,8 @@ import { Metadata } from "next";
 
 import Nav from '@/components/Nav/Nav';
 
+import logo from '../../../public/logo-black.svg';
+
 export const metadata: Metadata = {
     title: 'Услуги'
 }
@@ -22,7 +24,7 @@ export default function MyServices() {
     return (
         <div className="my-services">
             <div className="my-services__nav-wrapper">
-                <Link href='/'><Image className='logo' src='../../../public/logo-black.svg' width={150} height={150} alt="logo"/></Link>
+                <Link href='/'><Image className='logo' src={logo} width={150} height={150} alt="logo"/></Link>
                 <Nav color={'black'}/>
             </div>
 

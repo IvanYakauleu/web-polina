@@ -23,7 +23,7 @@ export default function Home() {
 						<li className="mainPage__list-item"><Link href='/about-me'>Обо мне</Link></li>
 						<li className="mainPage__list-item"><Link href='/portfolio'>Портфолио</Link></li>
 						<li className="mainPage__list-item"><Link href='/my-services'>Услуги</Link></li>
-						<li className="mainPage__list-item"><Link href='/'>Отзывы</Link></li>	
+						<li className="mainPage__list-item"><Link href='/reviews'>Отзывы</Link></li>	
 					</ul>
 				</nav>
 			</div>
