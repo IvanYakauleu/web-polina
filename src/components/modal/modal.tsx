@@ -32,7 +32,7 @@ export default function Modal({display, modal}: IModalProps) {
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-          const response = await axios.post<{ message: string }>('../../../public/bot.php', formData); // Замените '/api/submit' на URL вашего серверного скрипта
+          const response = await axios.post<{ message: string }>('./bot.php', formData); // Замените '/api/submit' на URL вашего серверного скрипта
           console.log('Ответ сервера:', response.data.message);
           // Здесь вы можете выполнить дополнительные действия после успешной отправки
         } catch (error) {
