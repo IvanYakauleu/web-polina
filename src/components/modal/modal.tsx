@@ -1,18 +1,44 @@
 "use client"; 
 import './modal.scss';
 
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
+import axios from 'axios';
 
 
 interface IModalProps {
   display: 'block' | "none";
   modal: () => void;
 }
+interface FormData {
+  name: string;
+  email: string;
+  number: string;
+}
 
 export default function Modal({display, modal}: IModalProps) {
+    const [formData, setFormData] = useState<FormData>({
+      name: '',
+      email: '',
+      number: '',
+    });
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    };
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        try {
+          const response = await axios.post<{ message: string }>('../../../public/bot.php', formData); // Замените '/api/submit' на URL вашего серверного скрипта
+          console.log('Ответ сервера:', response.data.message);
+          // Здесь вы можете выполнить дополнительные действия после успешной отправки
+        } catch (error) {
+          console.error('Ошибка при отправке:', error);
+        }
+        
     }
       return (
         <div className="overlay" style={{display}}>
@@ -21,9 +47,27 @@ export default function Modal({display, modal}: IModalProps) {
             <div className="modal__subtitle">Просто заполните форму заявки</div>
             <div className="modal__descr">и я перезвоню вам в ближайшее время</div>
             <form action="#" id="consultation-second" className="feed-form" onSubmit={handleSubmit}>
-              <input name="name" required placeholder="Ваше имя" type="text"/>
-              <input name="phone" required placeholder="Ваш телефон" type="number"/>
-              <input name="email" required placeholder="Ваш E-mail" type="email"/>
+              <input
+               name="name" 
+               required
+               placeholder="Ваше имя" 
+               type="text" 
+               value={formData.name}
+               onChange={handleChange}/>
+              <input 
+              name="phone" 
+              required
+              placeholder="Ваш телефон" 
+              type="number"
+              value={formData.number}
+              onChange={handleChange}/>
+              <input 
+              name="email" 
+              required 
+              placeholder="Ваш E-mail" 
+              type="email"
+              value={formData.email}
+              onChange={handleChange}/>
               <button className="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
           </div>
