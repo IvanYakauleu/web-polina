@@ -6,7 +6,6 @@ import Modal from '@/components/modal/modal';
 
 import Image from '../../../node_modules/next/image';
 import Link from '../../../node_modules/next/link';
-import { Metadata } from "next";
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -14,11 +13,6 @@ import Head from 'next/head';
 import Nav from '@/components/Nav/Nav';
 
 import logo from '../../../public/logo-black.svg';
-
-export const metadata: Metadata = {
-    title: 'Услуги',
-    description: 'Предоставляемые услуги'
-}
 
 export default function MyServices() {
     const [modalOpen, setOpenModal] = useState<"none" | "block">("none");
