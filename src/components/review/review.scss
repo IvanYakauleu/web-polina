@@ -1,0 +1,39 @@
+.review {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    max-width: 862px;
+    padding: 37px 50px 37px 50px;
+    // margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid black;
+
+
+    &__photo {
+        border-radius: 50%;
+        width: 100px;
+    }
+
+    &__wrapper {
+        margin-left: 25px;
+    }
+
+    &__name {
+        color: #000;
+        font-family: Raleway;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    &__descr {
+        color: #000;
+        margin-top: 10px;
+        font-family: Raleway;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140.033%; /* 25.206px */
+    }
+}
