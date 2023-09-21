@@ -31,13 +31,22 @@ export default function Modal({display, modal}: IModalProps) {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        try {
-          const response = await axios.post<{ message: string }>('http://localhost/bot.php', formData);
-          console.log(formData)
-          console.log('Ответ сервера:', response.data.message); 
-        } catch (error) {
-          console.error('Ошибка при отправке:', error);
-        }
+        // try {
+        //   const response = await axios.post<{ message: string }>('http://localhost/bot.php', formData);
+        //   console.log(formData)
+        //   console.log('Ответ сервера:', response.data.message); 
+        // } catch (error) {
+        //   console.error('Ошибка при отправке:', error);
+        // }
+        fetch("обработчик.php", {
+          method: "POST",
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Обработка ответа от сервера
+            console.log(data);
+        })
         
     }
       return (
