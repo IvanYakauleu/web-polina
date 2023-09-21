@@ -38,7 +38,7 @@ export default function Modal({display, modal}: IModalProps) {
         // } catch (error) {
         //   console.error('Ошибка при отправке:', error);
         // }
-        fetch("обработчик.php", {
+        fetch("http://localhost/bot.php", {
           method: "POST",
           body: JSON.stringify(formData)
         })
