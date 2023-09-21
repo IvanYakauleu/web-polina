@@ -33,6 +33,7 @@ export default function Modal({display, modal}: IModalProps) {
         event.preventDefault();
         try {
           const response = await axios.post<{ message: string }>('http://localhost/bot.php', formData);
+          console.log(formData)
           console.log('Ответ сервера:', response.data.message); 
         } catch (error) {
           console.error('Ошибка при отправке:', error);
