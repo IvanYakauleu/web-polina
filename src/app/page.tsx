@@ -27,6 +27,7 @@ export default function Home() {
 					</ul>
 				</nav>
 			</div>
+			<Link className='mainPage__about-me' href='/about-me'>Обо мне</Link>
 			<div className="mainPage__madia">
 				<div className="mainPage__madia-inst"><Link href='/'><Image src={inst} width={40} height={40} alt="instagram"/></Link></div>
 				<div className="mainPage__madia-telegram"><Link href='/'><Image src={telegram} width={40} height={40} alt="telegram"/></Link></div>

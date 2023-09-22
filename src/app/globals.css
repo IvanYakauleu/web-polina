@@ -47,6 +47,15 @@
   opacity: 0.5;
 }
 
+@media (max-width: 578px) {
+  .logo {
+      width: 100px;
+      height: 100px;
+      top: 20px;
+      left: 20px;
+  }
+}
+
 @font-face {
   font-family: "AngelicaC";
   src: url("../fonts/697-font.ttf") format("truetype"); 

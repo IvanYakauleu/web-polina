@@ -38,11 +38,63 @@
 
     &__madia {
         position: absolute;
-        right: 40px;
-        top: 50%;
-        transform: translateY(-50%);
-        div {
-            margin-bottom: 10px;
+        }
+
+    &__about-me {
+        display: none;
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 138px;
+        height: 41px;
+        border: 2px solid #FFF;
+        text-align: center;
+        padding-top: 9px;
+
+        color: #FFF;
+        font-family: Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+@media (min-width: 768px) {
+    .mainPage {
+
+        &__madia {
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            div {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mainPage {
+
+        background: url('../../public/main-foto-media-768.png') center center/cover no-repeat;
+
+        &__about-me {
+            display: block;
+        }
+
+        nav {
+            display: none;
+        }
+        &__madia {
+            display: flex;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            div {
+                margin-left: 10px;
+            }
         }
     }
 }
