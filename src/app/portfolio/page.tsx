@@ -5,9 +5,7 @@ import { useEffect, useCallback, useState } from 'react';
 import './page.scss';
 
 import Image from 'next/image';
-import Nav from '@/components/Nav/Nav';
-
-import logo from '../../../public/logo-black.svg'
+import Link from 'next/link';
 
 export default function Portfolio() {
     const [photo, setPhoto] = useState([])
@@ -36,10 +34,13 @@ export default function Portfolio() {
 
     return(
         <>
-            <header className="portfolio__nav-wrapper">
-                <Image className='logo' src={logo} width={150} height={150} alt="logo"/>
-                <Nav color={'black'}/>
-            </header>
+            <div className="portfolio__nav-items">
+                <Link className='portfolio__nav-item' href={"/portfolio/mobile"}>Мобильная съемка</Link>
+                |
+                <Link className='portfolio__nav-item' href={"/portfolio/visual"}>Визуал</Link>
+                |
+                <Link className='portfolio__nav-item' href={"/portfolio/packaging"}>Полная упаковка</Link>
+            </div>
             <main className='portfolio__main-wrapper'>
                 {photo.map((item, num) => {
                     return <Image className='client-photo' src={item} alt="client-logo" width={268} height={380} key={num}/>

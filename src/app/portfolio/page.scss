@@ -2,12 +2,29 @@
     &__main-wrapper {
         max-width: 1100px;
         margin: 0 auto;
-        margin-top: 260px;
+        margin-top: 20px;
         margin-bottom: 50px;
-        
         display: grid;
         grid-template-columns: repeat(4, auto);
         gap: 10px;
         
+    }
+
+    &__nav {
+        &-items {
+            margin-top: 150px;
+            text-align: center;
+            color: #326F32;
+            font-family: Raleway;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &-item {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
     }
 }
