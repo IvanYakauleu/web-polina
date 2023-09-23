@@ -25,9 +25,9 @@ export default function Nav(props: IColorProps) {
                     <li className="nav__list-item" style={{color: props.color}}><Link href='/'>Главная</Link></li>
                     {navItems.map(item => {
                         if(item.href === pathname) {
-                            return <li className="nav__list-item activ" key={item.label}><Link href={item.href}>{item.label}</Link></li>
+                            return <li className="nav__list-item" key={item.label} style={{color: "#326F32"}}><Link href={item.href}>{item.label}</Link></li>
                         } else {
-                            return <li className="nav__list-item" key={item.label}><Link href={item.href}>{item.label}</Link></li>
+                            return <li className="nav__list-item" key={item.label} style={{color: props.color}}><Link href={item.href}>{item.label}</Link></li>
                         }
                     })}
                 </ul>
