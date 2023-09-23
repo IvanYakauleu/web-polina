@@ -23,11 +23,7 @@
     }
 
     &__descr {
-        position: absolute;
-        padding-right: 70px;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 70px;
+        margin-top: 35%;
         color: #FFF;
         font-family: Raleway;
         font-size: 18px;
@@ -47,6 +43,7 @@
     }
 
     &__main-photo {
+        background: url(../../../public/about-me-top-right.png) center center/ cover no-repeat;
         display: block;
         position: relative;
         min-height: 100vh;
@@ -55,10 +52,11 @@
 
         &-center {
             position: absolute;
-            width: 50%;
-            height: 50%;
+
+            width: 100%;
+            height: 100%;
             top: 50%;
-            left: 150px;
+            // left: 150px;
             transform: translateY(-50%);
             z-index: -1;
         }

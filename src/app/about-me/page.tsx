@@ -43,11 +43,11 @@ export default function AboutMe () {
                 </div>
 
                 <div className="about-me__main-photo">
-                    <Image className='about-me__main-photo-center' src={photoCenter} width={380} height={395} alt="my-photo"/>
-                    <Image className='about-me__main-photo-top-left' src={photoTopLeft} width={155} height={178} alt="my-photo"/>
-                    <Image className='about-me__main-photo-top-right' src={photoTopRight} width={213} height={244} alt="my-photo"/>
+                    {/* <Image className='about-me__main-photo-center' src={photoCenter} width={1000} height={1000} alt="my-photo"/> */}
+                    {/* <Image className='about-me__main-photo-top-left' src={photoTopLeft} width={155} height={178} alt="my-photo"/>
+                    <Image className='about-me__main-photo-top-right' src={photoCenter} width={213} height={244} alt="my-photo"/>
                     <Image className='about-me__main-photo-bottom-left' src={photoBottomLeft} width={185} height={235} alt="my-photo"/>
-                    <Image className='about-me__main-photo-bottom-right' src={photoBottomRight} width={150} height={180} alt="my-photo"/>
+                    <Image className='about-me__main-photo-bottom-right' src={photoBottomRight} width={150} height={180} alt="my-photo"/> */}
                 </div>
                 
             </div>
