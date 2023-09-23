@@ -28,7 +28,7 @@ export default function Portfolio() {
     }, [])
 
     useEffect(() => {
-        request('http://localhost/bot.php')
+        request('/api.php')
             .then(data => console.log(data))
     }, [])
 
