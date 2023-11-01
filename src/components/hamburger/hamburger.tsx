@@ -25,7 +25,7 @@ export default function Hamburger(props: IColorProps) {
 
   const modal = () => {
     setHamburger(!hamburger);
-    document.body.style.overflow = hamburger ? 'none' : 'hidden';
+    document.body.style.overflow = hamburger ? 'scroll' : 'hidden';
   };
 
   return (
