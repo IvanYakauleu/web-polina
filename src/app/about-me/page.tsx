@@ -1,10 +1,8 @@
 import './page.scss';
-import Image from '../../../node_modules/next/image';
+
 import {Metadata} from 'next';
 
-import logo from '../../../public/logo-white.svg';
-
-import Nav from '@/components/Nav/Nav';
+import Header from '@/components/Header/Header';
 
 export const metadata: Metadata = {
     title: 'Обо мне'
@@ -14,10 +12,7 @@ export const metadata: Metadata = {
 export default function AboutMe () {
     return (
         <div className='about-me'>
-            <header className="about-me__nav-wrapper">
-                <Image className='logo' src={logo} width={150} height={150} alt="logo"/>
-                <Nav color={'white'}/>
-            </header>
+            <Header logo="white" color='white'/>
 
             <div className="about-me__main-wrapper">
                 <div className="about-me__main">

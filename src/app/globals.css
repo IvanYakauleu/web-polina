@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
+    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
+    'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,10 +17,7 @@
     #0071ff33 160deg,
     transparent 360deg
   );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
@@ -42,33 +39,30 @@
 
 .logo {
   position: absolute;
-  top: 30px;
-  left: 50px;
+  top: 20px;
+  left: 20px;
   opacity: 0.5;
   z-index: 101;
-}
-
-@media (max-width: 578px) {
-  .logo {
-      width: 100px;
-      height: 100px;
-      top: 20px;
-      left: 20px;
+  @media (max-width: 876px) {
+    width: 130px;
+    height: 130px;
+    top: 10px;
+    left: 5px;
   }
 }
 
 @font-face {
-  font-family: "AngelicaC";
-  src: url("../fonts/697-font.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+  font-family: 'AngelicaC';
+  src: url('../fonts/697-font.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway-VariableFont_wght.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -14,7 +14,7 @@
         height: 100%;
     }
     &__main {
-        background: url('../../../public/about-me-main-photo.png') center center/cover no-repeat;
+        background: url('../../../public/about-me-bottom-rigth.png') center center/cover no-repeat;
         min-height: 100vh;
         width: 50%;
         padding: 0 70px 0 70px;
@@ -23,7 +23,11 @@
     }
 
     &__descr {
-        margin-top: 35%;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        left: 70px;
+        padding-right: 70px;
         color: #FFF;
         font-family: Raleway;
         font-size: 18px;
@@ -43,55 +47,11 @@
     }
 
     &__main-photo {
-        background: url(../../../public/about-me-top-right.png) center center/ cover no-repeat;
+        background: url('../../../public/about-me-top-right.png') center center/cover no-repeat;
         display: block;
         position: relative;
         min-height: 100vh;
         width: 50%;
-
-
-        &-center {
-            position: absolute;
-
-            width: 100%;
-            height: 100%;
-            top: 50%;
-            // left: 150px;
-            transform: translateY(-50%);
-            z-index: -1;
-        }
-
-        &-top-left {
-            position: absolute;
-            width: 20%;
-            height: 25%;
-            left: 55px;
-            top: 130px;
-        }
-
-        &-top-right {
-            width: 30%;
-            height: 30%;
-            position: absolute;
-            top: 120px;
-            right: 13%;
-        }
-
-        &-bottom-left {
-            width: 25%;
-            height: 30%;
-            position: absolute;
-            left: 34px;
-            bottom: 85px;
-        }
-
-        &-bottom-right {
-            width: 20%;
-            height: 23%;
-            position: absolute;
-            bottom: 70px;
-            right: 20%;
-        }
     }
 
 }
