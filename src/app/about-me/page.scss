@@ -1,57 +1,57 @@
 .about-me {
+  position: relative;
+  min-height: 100vh;
+  %__nav-wrapper {
+    display: flex;
+    max-width: 1100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__main-wrapper {
+    display: flex;
+    height: 100%;
+  }
+  &__main {
+    background: url('../../../public/about-me-bottom-rigth.png') center center/cover no-repeat;
+    min-height: 100%;
+    width: 50%;
+    padding: 0 70px 0 70px;
     position: relative;
-    // min-height: 100vh;
-    %__nav-wrapper {
-        display: flex;
-        max-width: 1100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+  }
 
-    &__main-wrapper {
-        display: flex;
-        height: 100%;
-    }
-    &__main {
-        background: url('../../../public/about-me-bottom-rigth.png') center center/cover no-repeat;
-        min-height: 100vh;
-        width: 50%;
-        padding: 0 70px 0 70px;
-        position: relative;
-    
-    }
+  &__descr {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    left: 70px;
+    padding-right: 70px;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160.033%;
 
-    &__descr {
-        position: absolute;
-        top: 55%;
-        transform: translateY(-50%);
-        left: 70px;
-        padding-right: 70px;
-        color: #FFF;
-        font-family: Raleway;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160.033%;
-
-        h1, h2, div {
-            color: #FFF;
-            font-family: Raleway;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160.033%;
-            margin-top: 5px;
-        }
+    h1,
+    h2,
+    div {
+      color: #fff;
+      font-family: Raleway;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160.033%;
+      margin-top: 5px;
     }
+  }
 
-    &__main-photo {
-        background: url('../../../public/about-me-top-right.png') center center/cover no-repeat;
-        display: block;
-        position: relative;
-        min-height: 100vh;
-        width: 50%;
-    }
-
+  &__main-photo {
+    background: url('../../../public/about-me-top-right.png') center center/cover no-repeat;
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    width: 50%;
+  }
 }

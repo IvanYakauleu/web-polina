@@ -7,6 +7,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
+import hamburgerBlack from 'public/hamburger-black.svg';
+import hamburgerWhite from 'public/hamburger-white.svg';
+import closeBlack from 'public/close-black.svg';
+import closeWhite from 'public/close-white.svg';
+
 export interface IColorProps {
   color: 'black' | 'white';
 }
@@ -19,13 +24,13 @@ const navItems = [
   { label: 'Отзывы', href: '/reviews' },
 ];
 
-export default function Hamburger(props: IColorProps) {
+export default function Hamburger({ color }: IColorProps) {
   const pathname = usePathname();
   const [hamburger, setHamburger] = useState(false);
 
   const modal = () => {
     setHamburger(!hamburger);
-    document.body.style.overflow = hamburger ? 'scroll' : 'hidden';
+    document.body.style.overflow = hamburger ? 'auto' : 'hidden';
   };
 
   return (
@@ -33,7 +38,15 @@ export default function Hamburger(props: IColorProps) {
       <nav className="nav-hamburger">
         <div className="hamburger" onClick={modal}>
           <Image
-            src={hamburger ? '/close1.png' : '/hamburger.svg'}
+            src={
+              hamburger
+                ? color === 'white'
+                  ? closeWhite
+                  : closeBlack
+                : color === 'white'
+                ? hamburgerWhite
+                : hamburgerBlack
+            }
             width={50}
             height={50}
             alt="hamburger"
@@ -58,7 +71,7 @@ export default function Hamburger(props: IColorProps) {
                   onClick={() => modal()}
                   className="nav-hamburger__list-item"
                   key={item.label}
-                  style={{ color: props.color }}>
+                  style={{ color: 'white' }}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               );
