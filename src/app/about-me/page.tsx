@@ -1,6 +1,9 @@
 import './page.scss';
 
 import { Metadata } from 'next';
+import Image from 'next/image';
+
+import mainPhoto from 'public/about-me-top-right.png';
 
 import Hamburger from '@/components/hamburger/hamburger';
 import Header from '@/components/Header/Header';
@@ -12,11 +15,12 @@ export const metadata: Metadata = {
 export default function AboutMe() {
   return (
     <div className="about-me">
-      <Header logo="white" color="white" />
+      <Header logo="black" color="black" />
       <Hamburger color="black" />
 
       <div className="about-me__main-wrapper">
         <div className="about-me__main">
+          <Image className="about-me__photo" src={mainPhoto} alt="my photo" />
           <div className="about-me__descr">
             <h1>Я - Полина Миконович.</h1>
             <h2>SMM-специалист c 2019 года</h2>
@@ -37,8 +41,6 @@ export default function AboutMe() {
             </div>
           </div>
         </div>
-
-        <div className="about-me__main-photo"></div>
       </div>
     </div>
   );
