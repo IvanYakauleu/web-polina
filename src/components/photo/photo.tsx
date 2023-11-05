@@ -6,7 +6,12 @@ interface IPhotoProps {
 }
 
 const Photo = ({ url }: IPhotoProps) => {
-  return <Image src={url} width={268} height={380} alt="portfolio-photo" />;
+  return (
+    <div className="photo-wrapper">
+      <Image src={url} width={268} height={380} alt="portfolio-photo" />
+      <div className="watermark"></div>
+    </div>
+  );
 };
 
 export default Photo;
