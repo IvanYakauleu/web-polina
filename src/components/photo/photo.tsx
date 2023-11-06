@@ -34,7 +34,7 @@ const Photo = ({ url }: IPhotoProps) => {
       />
       {selectedImage && (
         <div className="fullscreen-image" onClick={closeImage}>
-          <Image src={url} alt="Selected Image" />
+          <Image src={url} width={500} height={700} alt="Selected Image" />
         </div>
       )}
     </>
