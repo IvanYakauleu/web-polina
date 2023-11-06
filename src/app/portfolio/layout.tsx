@@ -14,10 +14,6 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
       <Header logo="black" color="black" />
       <Hamburger color="black" />
       <div className="portfolio__nav-items">
-        <Link className="portfolio__nav-item" href={'/portfolio/mobile'}>
-          Мобильная съемка
-        </Link>
-        |
         <Link className="portfolio__nav-item" href={'/portfolio/visual'}>
           Визуал
         </Link>
