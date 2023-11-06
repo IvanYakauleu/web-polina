@@ -1,14 +1,14 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import { NextResponse } from 'next/server';
 
-export default async function handler(req, res) {
+export async function POST(req, res) {
   if (req.method === 'POST') {
-    dotenv.config(); // Загружает переменные окружения из .env
+    dotenv.config();
 
     const chatId = process.env.TELEGRAM_CHAT_ID;
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
-
-    const { name, email, phone } = req.body;
+    const { name, email, phone } = await req.json();
 
     const messageText = `New form submission:\nИмя: ${name}\nПочта: ${email}\nТелефон: ${phone}`;
 
@@ -24,15 +24,15 @@ export default async function handler(req, res) {
         }),
       });
 
-      if (response.ok) {
-        res.status(200).json({ message: 'Form submission successful' });
-      } else {
-        res.status(500).json({ message: 'Form submission failed' });
-      }
+      return new NextResponse('Form submission successful', {
+        status: 200,
+      });
     } catch (error) {
-      res.status(500).json({ message: 'Form submission failed' });
+      return new NextResponse('Form submission failed', {
+        status: 500,
+      });
     }
   } else {
-    res.status(405).end(); // Метод не разрешен
+    // res.status(405).end(); // Метод не разрешен
   }
 }

@@ -31,7 +31,7 @@ export default function Modal({ display, modal }: IModalProps) {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetch('/api/submit-form', {
+    fetch('api/bot', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
