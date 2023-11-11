@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import { NextResponse } from 'next/server';
 
-export async function POST(req, res) {
+export async function POST(req) {
   if (req.method === 'POST') {
     dotenv.config();
 
@@ -28,7 +28,7 @@ export async function POST(req, res) {
         status: 200,
       });
     } catch (error) {
-      return new NextResponse('Form submission failed', {
+      return new NextResponse(error.message, {
         status: 500,
       });
     }
