@@ -1,4 +1,10 @@
+'use client';
+
 import './page.scss';
+import { useState } from 'react';
+import PhotoSlider from '@/components/Slider/PhotoSlider';
+
+import { StaticImageData } from 'next/image';
 
 import Photo from '@/components/photo/photo';
 
@@ -24,6 +30,18 @@ import photo19 from 'public/portfolio/IMG_2350.jpg';
 import photo20 from 'public/portfolio/IMG_2418.jpg';
 
 export default function Portfolio() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openImage = (i: number) => {
+    setSelectedImage(i + 1);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'auto';
+  };
+
   const massPhoto = [
     photo1,
     photo2,
@@ -51,8 +69,15 @@ export default function Portfolio() {
     <>
       <main className="portfolio__main-wrapper">
         {massPhoto.map((photo, i) => (
-          <Photo key={i} url={photo} />
+          <div key={i} onClick={() => openImage(i)}>
+            <Photo url={photo} />
+          </div>
         ))}
+        {selectedImage && (
+          <div className="fullscreen-image">
+            <PhotoSlider mass={massPhoto} selectedImage={selectedImage} close={closeImage} />
+          </div>
+        )}
       </main>
     </>
   );
